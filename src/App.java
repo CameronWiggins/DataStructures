@@ -26,7 +26,15 @@ public class App {
             {
                 System.out.println("What is their ID?");
                 String id = scan.nextLine();
-                System.out.println(studentDatabase.get(id));
+                if(studentDatabase.get(id) == null)
+                {
+                    System.out.println("ID not found in database");
+                }
+                else
+                {
+                    System.out.println(studentDatabase.get(id));
+                }
+                
             }
             else if(input == 3)
             {
