@@ -12,35 +12,34 @@ public class App {
         {
             System.out.println("What would you like to do?");
             System.out.println("1 - Add Student \n2 - Find Student \n3 - Delete Student\n4 - Show all Students\n5 - Exit");
-            input = scan.nextInt();
+            input = Integer.parseInt(scan.nextLine());
 
             if(input == 1)
             {
                 System.out.println("What is their name?");
                 String name = scan.nextLine();
-                System.out.println("What is their ID");
+                System.out.println("What is their ID?");
                 String id = scan.nextLine();
                 studentDatabase.put(id, name);
             }
             else if (input == 2)
             {
-                System.out.println("What is their ID");
+                System.out.println("What is their ID?");
                 String id = scan.nextLine();
-                for (String student : studentDatabase.keySet())
-                {
-                    if (student == id)
-                    {
-                        System.out.println(studentDatabase.get(student));
-                    }
-                }
+                System.out.println(studentDatabase.get(id));
             }
             else if(input == 3)
             {
-
+                System.out.println("What is their ID?");
+                String id = scan.nextLine();
+                studentDatabase.remove(id);
             }
             else if (input == 4)
             {
-
+                for (String student : studentDatabase.keySet())
+                {
+                    System.out.println("Student: " + studentDatabase.get(student) + ", ID: " + student);
+                }
             }
         }
     }
